@@ -1,0 +1,63 @@
+Running q3 for 10000 seconds 5 times:
+
+Run 1:
+
+Number of customers entered: 7703
+Number of customers left without haircut: 628
+Fraction of customer visits result in turning away due to a full shop: 0.081527
+Average time spent in the shop (including haircut) by a customer who does not find a full shop: 3.395913
+Average number of customer in shop: 2.401930
+Fraction of time someone is sitting in the barber's chair: 0.354768
+
+Run 2:
+
+Number of customers entered: 7634
+Number of customers left without haircut: 517
+Fraction of customer visits result in turning away due to a full shop: 0.067723
+Average time spent in the shop (including haircut) by a customer who does not find a full shop: 3.241101
+Average number of customer in shop: 2.306325
+Fraction of time someone is sitting in the barber's chair: 0.365768
+
+Run 3:
+
+Number of customers entered: 7739
+Number of customers left without haircut: 617
+Fraction of customer visits result in turning away due to a full shop: 0.079726
+Average time spent in the shop (including haircut) by a customer who does not find a full shop: 3.414136
+Average number of customer in shop: 2.430996
+Fraction of time someone is sitting in the barber's chair: 0.351950
+
+Run 4:
+
+Number of customers entered: 7596
+Number of customers left without haircut: 594
+Fraction of customer visits result in turning away due to a full shop: 0.078199
+Average time spent in the shop (including haircut) by a customer who does not find a full shop: 3.413980
+Average number of customer in shop: 2.389952
+Fraction of time someone is sitting in the barber's chair: 0.357420
+
+Run 5:
+
+Number of customers entered: 7623
+Number of customers left without haircut: 558
+Fraction of customer visits result in turning away due to a full shop: 0.073200
+Average time spent in the shop (including haircut) by a customer who does not find a full shop: 3.313652
+Average number of customer in shop: 2.340619
+Fraction of time someone is sitting in the barber's chair: 0.358852
+
+Average statistics for the 5 runs: 
+
+Number of customers entered: 7659
+Number of customers left without haircut: 582.8
+Fraction of customer visits result in turning away due to a full shop: 0.076075
+Average time spent in the shop (including haircut) by a customer who does not find a full shop: 3.3557564
+Average number of customer in shop: 2.3739644
+Fraction of time someone is sitting in the barber's chair: 0.3577516
+
+According to the Debug info, when the simulate speed is fixed, the number of customers is aroud 7659,
+and fraction of customer visits result in turning away is correct
+because the haircut time (1.2 second) and 4 waiting chairs
+Average time spent in shop should be haircut time + waitting time, so if average 2 custormer in shop, 
+the time should be 2.4 second, so the statistics results are connected and reasonable
+and the average waiting time should be larger than haircut time (since there are average 2.37 customers in shop), 
+so the fraction of time someone is sitting in the barber's chair should be smaller than 0.5.

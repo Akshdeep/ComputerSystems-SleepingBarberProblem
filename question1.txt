@@ -1,0 +1,53 @@
+monitor barbershop {
+	condition c_barber_chair
+	condition c_waiting_chair
+	condition c_haircut
+	condition c_ready_haircut
+	condition c_leaves
+
+	MAX = 4
+	waiting_chair_occupied = 0
+	barber_chair = 0
+	barber_sleep = 0
+
+	barber() {
+		while (true) {
+			while (waiting_chair_occupied = 0) {
+				barber_sleep = 0
+				wait(c_barber_chair)
+				haircut()
+				signal(c_haircut)
+				wait(c_leaves)
+				}
+			signal(c_waiting_chair)
+			waiting_chair_occupied -= 1;
+			barber_chair = 1
+			wait(c_ready_haircut)
+			haircut()
+			signal(c_haircut)
+			wait(c_leaves)
+		}
+
+	customer() {
+		if ((waiting_chair_occupied == MAX and barber_chair == 1) or waiting_chair_occupied == MAX + 1){
+			leave
+		}
+		if (barber_sleep == 0) {
+			signal(c_barber_chair)
+			barber_sleep = 1;
+			barber_chair = 1;
+		}
+		else {
+			waiting_chair_occupied += 1
+			wait(c_waiting_chair)
+			signal(c_ready_haircut)
+		}
+		wait(c_haircut)
+		signal(c_leaves)
+		barber_chair = 0
+		leave
+	}		
+
+	}
+}
+
